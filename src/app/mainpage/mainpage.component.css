@@ -1,0 +1,69 @@
+.tab {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+    font-size: 16px;
+  }
+  
+  .tab-button.active {
+    background-color: #ccc;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  table {
+    width: 100%;
+  }
+  
+  .mat-row:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .profile-card {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .profile-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .profile-icon {
+    margin-right: 10px;
+  }
+  
+  .profile-label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .profile-value {
+    font-weight: normal;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-header-cell {
+    font-weight: bold;
+  }
+  
+  .mat-row:hover {
+    background-color: #f5f5f5;
+  }
+  
+  
