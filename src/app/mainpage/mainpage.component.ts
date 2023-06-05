@@ -7,7 +7,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
-  styleUrls: ['./mainpage.component.css']
+  styleUrls: ['./mainpage.component.css'],
+  providers: [ProductService]
 })
 export class MainpageComponent implements OnInit {
    
