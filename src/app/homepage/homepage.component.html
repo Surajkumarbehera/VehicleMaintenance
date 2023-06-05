@@ -1,0 +1,615 @@
+<!--<div class="tab">
+    <button class="tab-button" [ngClass]="{ active: activeTab === 'home' }" (click)="activeTab = 'home'">Home</button>
+    <div *ngIf="loginStatus1">
+    <button class="tab-button" [ngClass]="{ active: activeTab === 'global' }" (click)="activeTab = 'global'">Global</button>
+    <button class="tab-button" [ngClass]="{ active: activeTab === 'vehicle-details' }" (click)="activeTab = 'vehicle-details'">Vehicle Details</button>
+</div>
+    
+  </div>
+  
+  <div class="tab-content">
+    <div *ngIf="activeTab === 'home'">
+      <h2>Home</h2>
+      <p>Welcome to the homepage!</p>
+      <p>We provides a brief overview of the services offered for moto servicing. It can include key points such as regular maintenance, repairs, oil changes, tire replacements, and other common services which comes with the alert feature over the mail and by accessing the application.</p>-->
+      <!-- Add home content here -->
+    <!--</div>
+    <div *ngIf="activeTab === 'global'">
+      <h2>Global</h2>
+      <p>Explore the global section.</p>-->
+      <!-- Add global content here -->
+    <!--</div>
+    <div *ngIf="activeTab === 'vehicle-details'">
+      <h2>Vehicle Details</h2>
+      <p>View and manage vehicle details.</p>-->
+      <!-- Add vehicle details content here -->
+      <!--<h2>User Profile</h2>
+
+<div>
+  <label for="firstName">First Name:</label>
+  <span id="firstName">{{ userProfile.firstName }}</span>
+</div>
+
+<div>
+  <label for="lastName">Last Name:</label>
+  <span id="lastName">{{ userProfile.lastName }}</span>
+</div>
+
+<div>
+  <label for="dob">Date of Birth:</label>
+  <span id="dob">{{ userProfile.dob }}</span>
+</div>
+
+<div>
+  <label for="gender">Gender:</label>
+  <span id="gender">{{ userProfile.gender }}</span>
+</div>
+
+<div>
+  <label for="street">Street:</label>
+  <span id="street">{{ userProfile.street }}</span>
+</div>
+
+<div>
+  <label for="location">Location:</label>
+  <span id="location">{{ userProfile.location }}</span>
+</div>
+
+<div>
+  <label for="city">City:</label>
+  <span id="city">{{ userProfile.city }}</span>
+</div>
+
+<div>
+  <label for="state">State:</label>
+  <span id="state">{{ userProfile.state }}</span>
+</div>
+
+<div>
+  <label for="pincode">Pincode:</label>
+  <span id="pincode">{{ userProfile.pincode }}</span>
+</div>
+
+<div>
+  <label for="mobileNumber">Mobile Number:</label>
+  <span id="mobileNumber">{{ userProfile.mobileNumber }}</span>
+</div>
+
+<div>
+  <label for="email">Email:</label>
+  <span id="email">{{ userProfile.email }}</span>
+</div>
+
+<div>
+  <label for="vehicleNumber">Vehicle Number:</label>
+  <span id="vehicleNumber">{{ userProfile.vehicleNumber }}</span>
+</div>
+
+<div>
+  <label for="registrationNumber">Registration Number:</label>
+  <span id="registrationNumber">{{ userProfile.registrationNumber }}</span>
+</div>
+
+<div>
+  <label for="yearOfPurchase">Year of Purchase:</label>
+  <span id="yearOfPurchase">{{ userProfile.yearOfPurchase }}</span>
+</div>
+
+<div>
+  <label for="driverLicense">Driver License:</label>
+  <span id="driverLicense">{{ userProfile.driverLicense }}</span>
+</div>
+
+<div>
+  <label for="dealer">Dealer:</label>
+  <span id="dealer">{{ userProfile.dealer }}</span>
+</div>
+
+    </div>
+  </div>
+-->
+
+<!--New Page-->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../assets/images/car1.png">
+  <link rel="stylesheet" type="text/css" href="">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <title>Intelligent Vehicle Maintenance</title>
+
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav {
+      background-color: white;
+    }
+
+    .one-edge-shadow {
+      box-shadow: 0 8px 2px -5px rgb(246, 245, 245);
+    }
+
+    .display-8 {
+      font-weight: 200;
+      font-size: 30px;
+    }
+
+    .styling-4 {
+      font-weight: 100;
+      font-size: 15px;
+    }
+
+    #mobile_responsive {
+      display: none;
+    }
+
+
+    .card-4 {
+      transition: transform 0.5s;
+    }
+
+
+    h5 {
+      color: #555;
+      font-weight: normal;
+    }
+
+
+    .card-4:hover {
+      transform: translateY(-5px)
+    }
+
+    .title {
+      text-align: center;
+      margin: 0 auto 80px;
+      position: relative;
+      line-height: 60px;
+      color: #555;
+    }
+
+    .title::after {
+      content: '';
+      background: #ff523b;
+      width: 80px;
+      height: 5px;
+      border-radius: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .float {
+      position: fixed;
+      width: 330px;
+      height: 250px;
+      bottom: 50px;
+      right: 50px;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 3px 3px 3px #999;
+    }
+
+    .float:hover {
+      color: #fff
+    }
+
+    .multicolortext {
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(to left, violet, indigo, green, blue, orange, red);
+    }
+
+    /* Bootstrap 4 text input with search icon */
+    .has-search .form-control {
+      padding-left: 2.375rem;
+    }
+
+    .has-search .form-control-feedback {
+      position: absolute;
+      z-index: 2;
+      display: block;
+      width: 2.375rem;
+      height: 2.375rem;
+      line-height: 2.375rem;
+      text-align: center;
+      pointer-events: none;
+      color: #aaa;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      /* For mobile phones: */
+      #mobile_responsive {
+        display: block;
+        margin-bottom: 20px;
+
+      }
+
+      #desktop_responsive {
+        display: none
+      }
+
+    }
+  </style>
+
+</head>
+
+<body >
+  <!--
+  <div id="loader">
+    <div class="container" style="text-align:center">
+      <img style="margin-left: auto;margin-right: auto;width: 50%;"
+        src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif">
+      <h1 class="display-8">
+        <span class="multicolortext">Loading...</span>
+      </h1>
+    </div>
+    <div class="container-fluid border-top" style="text-align:center;bottom:30px;position: fixed;">
+      <footer class="container" style="margin-top:10px;padding-top:20px;">
+        <p> Vechicle Service Automation &middot;
+          <a href="facebook.com" class="fa fa-facebook"></a> &middot;
+          <a href="twitter.com" class="fa fa-twitter"></a> &middot;
+          <a href="instagram.com" class="fa fa-instagram"></a> &middot;
+          <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+        </p>
+      </footer>
+    </div>
+  </div>-->
+
+  <div id="main_content" >
+    <!-- navbar -->
+    <nav class=" sticky-top navbar navbar-expand-lg navbar-dark bg-dark ">
+      <img src="./images/img (2).jpg" width="35px" style="padding-right:5px;" />
+      <a class="navbar-brand" href="/">Intelligent Vehicle Maintenance</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+        <ul class=" navbar-nav my-2 my-lg-0">
+
+          
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/ResgistrationPage"><i class="fas fa-user-plus"></i> Register<span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login<span
+                class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<style>
+.header_c {
+  position: relative;
+  height: auto;
+  background-image: linear-gradient(rgb(186, 104, 200,0.2),rgb(186, 104, 200,0.2));
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+</style>
+<!-- Welcome message container -->
+<div class="container-fluid" style="margin:0px;padding:35px; 
+background-image: -webkit-linear-gradient(40deg, rgb(255,255,255) 55%,	rgb(186, 104, 200,0.5)50%); 
+">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6" style="margin: auto; text-align: justify;">
+				<h2 class="heading">Welcome to IVMS!</h2>
+				<p class="lead">An intelligent vechicle maintenance system could address these challenges by providing timely and accurate alerts to vehicle owners when maintenance is needed, helping them to avoid missed or delayed maintenance tasks.</p>
+			</div>
+			<div class="col-lg-6 " style="margin: auto; text-align:center; ">
+				<img height="370px" src="../../../assets/images/car1.png" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Auto-typing effect container with Signup access -->
+<div class="container-fluid" style="margin:0px;padding:35px;
+background-image: -webkit-linear-gradient(40deg, rgb(255,255,255) 75.5%,	rgb(186, 104, 200,0.5) 50%);">
+	<div class="container rounded" style="background-color: white;padding:20px; box-shadow: 20px 20px 50px 10px grey;">
+		<div class="row" >
+			<div class="col-lg-6 " style="margin: auto;">
+				<h2 class="heading" id="typing_effect"></h2>
+			</div>
+			<div class="col-lg-6" style="margin: auto; text-align: justify;">
+				<p class="lead">You are just one step away from intelligntly maintaining your vehcile with IVMS ! <br>Register or Sign-in now.</p>
+				<p><a class="btn btn-dark" routerLink="/ResgistrationPage" role="button"><i class="fas fa-user-plus"
+							aria-hidden="true"></i> Register</a>
+					<a class="btn btn-outline-dark"  routerLink="/login" role="button"><i class="fa fa-sign-in" aria-hidden="true"></i>
+							 Login</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Carousel container -->
+<div class="header_c container-fluid" style="padding-top:45px;padding-bottom:35px;" id="about">
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="container">
+					<div class="row" style="text-align: center;">
+						<div class="col-lg-6" style="margin: auto;text-align:left">
+							<h2 class="heading">Increased Customer Satisfaction</h2>
+							<p class="lead">By providing an easy-to-use system that helps vehicle owners keep their cars in good working order, the system could increase customer satisfaction and loyalty. </p>
+						</div>
+						<div class="col-lg-6 pb-4" style="margin: auto;">
+							<img height="260px" src="../../../assets/images/CustomerSatisfaction.png" alt="First slide">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="container">
+					<div class="row" style="text-align: center;">
+						<div class="col-lg-6 pb-4" style="margin: auto;">
+							<img height="260px" src="../../../assets/images/ReducedCost.png" alt="Second slide">
+						</div>
+						<div class="col-lg-6" style="margin: auto;text-align:left">
+							<h2 class="heading">Reduced Maintenance Costs</h2>
+							<p class="lead">By enabling vehicle owners to address maintenance needs before they become serious problems, the system could help to reduce maintenance costs over time. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="container">
+					<div class="row" style="text-align: center;">
+						<div class="col-lg-6" style="margin:auto;text-align:left">
+							<h2 class="heading">Improved Safety</h2>
+							<p class="lead">By helping vehicle owners to stay on top of maintenance needs, the system could improve safety on the road by reducing the risk of breakdowns or accidents caused by poorly maintained vehicles.</p>
+						</div>
+						<div class="col-lg-6 pb-4" style="margin: auto;">
+							<img height="260px" src="./images/img (1).jpg" alt="Third slide">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+</div>
+
+<!-- How it works? container -->
+<div class="container-fluid" style="padding-top:35px;padding-bottom:35px">
+	<h1 class="heading" class="mb-4" style="text-align: center;">How it works ?</h1>
+	<div class="container">
+		<div class="row" style="text-align: center;">
+			<div class="col-lg-4">
+				<img height="250px" class="pb-4" src="../../../assets/images/Register2.png" />
+				<h2 class="heading">Register</h2>
+				<p class="lead">The user/dealer needs to register user's vehcile using Registration form.</p>
+			</div>
+			<div class="col-lg-4">
+				<img height="250px" class="pb-4" src="../../../assets/images/Analysis2.png" />
+				<h2 class="heading">Analysing</h2>
+				<p class="lead">IVMS will analyse periodically vehcile's data with the standard threshold values and the user will be notified for any data discrepencies</p>
+			</div>
+			<div class="col-lg-4">
+				<img height="250px" class="pb-4" src="../../../assets/images/Monitoring1.png" />
+				<h2 class="heading">Monitoring</h2>
+				<p class="lead">Monitor all your analysis on a well cursted Dashboard section.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Data analytics -->
+<div class="container-fluid" style="padding-top:45px;padding-bottom:35px">
+	<div class="container">
+		<div class="row" style="text-align: center;">
+			<div class="col-lg-4">
+				<img height="300px" class="pb-4" src="../../../assets/images/EnhancedDataAnalytics.png" />
+			</div>
+			<div class="col-lg-4">
+				<h1 class="heading" class="mb-4" style="text-align: center;">Enhanced Data Analytics</h1>
+				<p class="lead" style="text-align: justify;">By collecting and analyzing large amounts of data on vehicle performance and maintenance needs, the system could generate valuable insights for car manufacturers and service providers, enabling them to develop better products and services.</p>
+			</div>
+			<div class="col-lg-4">
+				<img height="230px" class="pb-4" src="../../../assets/images/EnhancedDataAnalytics2.png" />
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+    <div class="container-fluid border-top">
+      <footer class="container" style="margin-top:10px;padding-top:20px;padding-bottom:20px">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; <span id="year"></span> Intelligent Vehicle Maintenance System &middot;
+          <a href="facebook.com" class="fa fa-facebook"></a> &middot;
+          <a href="twitter.com" class="fa fa-twitter"></a> &middot;
+          <a href="instagram.com" class="fa fa-instagram"></a> &middot;
+          <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript  -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/flotr2.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+
+    var i = 0;
+    var txt = "Care your vehicle with IVMS - a new leap in vecicle servicing!";
+    var speed = 60;
+
+    var previous_message;
+    function myFunction() {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('main_content').style.display = 'block';
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+      if (i < txt.length) {
+        document.getElementById("typing_effect").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(myFunction, speed);
+      }
+    }
+
+    $(".dropdown-menu a").click(function () {
+      $(this).parents(".dropdown").find('.display_btn').html($(this).text());
+      $(this).parents(".dropdown").find('.display_btn').val($(this).data('value'));
+    });
+
+    function seekAudioClick(startTime) {
+      var element = document.getElementById('music');
+      element.play();
+      element.currentTime = parseFloat(startTime);
+    }
+
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player_youtube', {
+        videoId: '{{file_information.youtubeId}}'
+      });
+    }
+
+    function debounce(func, wait = 100) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          func.apply(this, args);
+        }, wait);
+      };
+    }
+
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip({ html: true });
+    });
+
+
+    $(function () {
+      $('.show_player').click(function () {
+        $('.player_window').show();
+      });
+
+
+      $('.hide_player').click(function () {
+        $('.player_window').hide();
+      });
+
+      $('.seekVideo').click(function () {
+        $('.' + previous_message).css({ "border": "0px", "border-radius": "0px" })
+        var startTime = parseFloat($(this).data('timestamp'))
+        var current_message = $(this).attr('id')
+        current_message = 'wrapper-' + current_message
+        previous_message = current_message
+        $('.' + current_message).css({ "border": "2px solid #95a5a6", "border-radius": "25px" })
+        player.seekTo(startTime)
+        player.playVideo()
+      })
+
+      $('.seekAudio').click(function () {
+        $('.' + previous_message).css({ "border": "0px", "border-radius": "0px" })
+
+        var current_message = $(this).attr('id')
+        current_message = 'wrapper-' + current_message
+        previous_message = current_message
+        $('.' + current_message).css({ "border": "2px solid #95a5a6", "border-radius": "25px" })
+
+      })
+
+      $('#search').keyup(debounce(function (e) {
+        var search = $(this).val().toLowerCase().trim()
+
+        $('#transcript .message').each(function () {
+          if ($(this).text().toLowerCase().indexOf(search) != -1) {
+            $(this).parent().show()
+          } else {
+            $(this).parent().hide()
+          }
+        })
+      }, 250));
+
+      var dataArray = new Array();
+      dataArray[0] = "{% static 'images/profile2.png' %}";
+      dataArray[1] = "{% static 'images/profile3.png' %}";
+      dataArray[2] = "{% static 'images/profile1.png' %}";
+      //start with id=0 after 5 seconds
+      var thisId = 0;
+
+      window.setInterval(function () {
+        $('#thisImg').attr('src', dataArray[thisId]);
+        thisId++; //increment data array id
+        if (thisId == 3) thisId = 0; //repeat from start
+      }, 5000);
+    });
+
+
+  </script>
+
+</body>
+
+</html>
+
