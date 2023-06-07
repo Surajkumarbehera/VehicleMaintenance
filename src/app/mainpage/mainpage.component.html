@@ -1,109 +1,237 @@
+<div class="fixed-top">
 <div class="tab">
     <button class="tab-button" [ngClass]="{ active: activeTab === 'home' }" (click)="activeTab = 'home'">Home</button>
-    <div *ngIf="loginStatus1">
     <button class="tab-button" [ngClass]="{ active: activeTab === 'global' }" (click)="activeTab = 'global'">Global</button>
-    <button class="tab-button" [ngClass]="{ active: activeTab === 'vehicle-details' }" (click)="activeTab = 'vehicle-details'">Vehicle Details</button>
-</div>
-    
+    <button class="tab-button" [ngClass]="{ active: activeTab === 'vehicle-details' }" (click)="activeTab = 'vehicle-details'">Details</button>
+   <div class="top-right">
+<div class="mainText">
+    <span class="word">
+      <div class="bold-div">{{vehicles[0].ownerName }}</div>
+    </span>
+  <span class="subtext">{{ vehicles[0].model }}</span>
+   </div> 
   </div>
+</div>
   
+</div>
+
+  
+  <div class="padding-for-content">
   <div class="tab-content">
     <div *ngIf="activeTab === 'home'">
       <h2>Home</h2>
       <p>Welcome to the homepage!</p>
       <p>We provides a brief overview of the services offered for moto servicing. It can include key points such as regular maintenance, repairs, oil changes, tire replacements, and other common services which comes with the alert feature over the mail and by accessing the application.</p>
       <!-- Add home content here -->
+      <div class="tab">
+        <button class="tab-button" [ngClass]="{ active: activedTab === 'tab1' }" (click)="activedTab = 'tab1'">Details for Services</button>
+        <button class="tab-button" [ngClass]="{ active: activedTab === 'tab2' }" (click)="activedTab = 'tab2'">Current Streaming data</button>
+        
+     
+      </div>
+      
+      <div *ngIf="activedTab === 'tab1'">
+        <h2>This shows the data after the comprasion and red color indicates that it needs to be actioned upon urgently.</h2>
+        <!-- Add your content for Tab 1 here -->
+        <table>
+          <tbody>
+            <tr>
+              <th>Parts Name</th>
+              <th>Value</th>
+              <th>Status</th>
+            </tr>
+            <tr *ngFor="let row of curentVehicledata">
+              <td>{{ row.fieldName }}</td>
+              <td>{{ row.value }}</td>
+              <td>
+              
+
+
+              <div [ngSwitch]="row.value">
+                <div *ngSwitchCase="true">
+                  <div  class="circleRed"></div>
+                </div>
+                <div *ngSwitchCase="false">
+                  <div class="circleGreen"></div>
+                </div>
+               
+                <div *ngSwitchDefault>
+                  <div class="circleGreen"></div>
+                </div>
+              </div>
+              
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div *ngIf="activedTab === 'tab2'">
+        <h2>This shows the data are currently being fetched from your {{ vehicles[0].model }}. </h2>
+        <!-- Add your content for Tab 2 here -->
+        <table>
+          <tbody>
+            <tr>
+              <th>Field Name</th>
+              <th>Value</th>
+            </tr>
+            <tr *ngFor="let row of streamingData">
+              <td>{{ row.fieldName }}</td>
+              <td>{{ row.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+      
+      
+      
+
+      
+      
     </div>
     <div *ngIf="activeTab === 'global'">
       <h2>Global</h2>
-      <p>Explore the global section.</p>
+      <p>This section provides you the information that will contain the Global threshold limit for {{ vehicles[0].model }}</p>
       <!-- Add global content here -->
+      <table>
+        <tbody>
+          <tr *ngFor="let row of tableData">
+            <td>{{ row.fieldName }}</td>
+            <td>{{ row.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
     <div *ngIf="activeTab === 'vehicle-details'">
       <h2>Vehicle Details</h2>
       <p>View and manage vehicle details.</p>
       <!-- Add vehicle details content here -->
-      <h2>User Profile</h2>
-
-<div>
-  <label for="firstName">First Name:</label>
-  <span id="firstName">{{ userProfile.firstName }}</span>
-</div>
-
-<div>
-  <label for="lastName">Last Name:</label>
-  <span id="lastName">{{ userProfile.lastName }}</span>
-</div>
-
-<div>
-  <label for="dob">Date of Birth:</label>
-  <span id="dob">{{ userProfile.dob }}</span>
-</div>
-
-<div>
-  <label for="gender">Gender:</label>
-  <span id="gender">{{ userProfile.gender }}</span>
-</div>
-
-<div>
-  <label for="street">Street:</label>
-  <span id="street">{{ userProfile.street }}</span>
-</div>
-
-<div>
-  <label for="location">Location:</label>
-  <span id="location">{{ userProfile.location }}</span>
-</div>
-
-<div>
-  <label for="city">City:</label>
-  <span id="city">{{ userProfile.city }}</span>
-</div>
-
-<div>
-  <label for="state">State:</label>
-  <span id="state">{{ userProfile.state }}</span>
-</div>
-
-<div>
-  <label for="pincode">Pincode:</label>
-  <span id="pincode">{{ userProfile.pincode }}</span>
-</div>
-
-<div>
-  <label for="mobileNumber">Mobile Number:</label>
-  <span id="mobileNumber">{{ userProfile.mobileNumber }}</span>
-</div>
-
-<div>
-  <label for="email">Email:</label>
-  <span id="email">{{ userProfile.email }}</span>
-</div>
-
-<div>
-  <label for="vehicleNumber">Vehicle Number:</label>
-  <span id="vehicleNumber">{{ userProfile.vehicleNumber }}</span>
-</div>
-
-<div>
-  <label for="registrationNumber">Registration Number:</label>
-  <span id="registrationNumber">{{ userProfile.registrationNumber }}</span>
-</div>
-
-<div>
-  <label for="yearOfPurchase">Year of Purchase:</label>
-  <span id="yearOfPurchase">{{ userProfile.yearOfPurchase }}</span>
-</div>
-
-<div>
-  <label for="driverLicense">Driver License:</label>
-  <span id="driverLicense">{{ userProfile.driverLicense }}</span>
-</div>
-
-<div>
-  <label for="dealer">Dealer:</label>
-  <span id="dealer">{{ userProfile.dealer }}</span>
-</div>
-
+      
+      <table>
+        <tbody>
+          <tr>
+            <th>Fuel Type</th>
+            <td>{{ vehicles[0].fuelType }}</td>
+          </tr>
+          <tr>
+            <th>Maker</th>
+            <td>{{ vehicles[0].maker }}</td>
+          </tr>
+          <tr>
+            <th>Model</th>
+            <td>{{ vehicles[0].model }}</td>
+          </tr>
+          <tr>
+            <th>Number Plate</th>
+            <td>{{ vehicles[0].numberPlate }}</td>
+          </tr>
+          <tr>
+            <th>Owner Name</th>
+            <td>{{ vehicles[0].ownerName }}</td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td>{{ vehicles[0].price }}</td>
+          </tr>
+          <tr>
+            <th>Registration Date</th>
+            <td>{{ vehicles[0].registrationDate }}</td>
+          </tr>
+          <tr>
+            <th>Vehicle Color</th>
+            <td>{{ vehicles[0].vehicleColor }}</td>
+          </tr>
+          <tr>
+            <th>Vehicle Type</th>
+            <td>{{ vehicles[0].vehicleType }}</td>
+          </tr>
+          <tr>
+            <th>Vehicle Number</th>
+            <td>{{ vehicles[0].vehicleNumber }}</td>
+          </tr>
+          <tr>
+            <th>Year</th>
+            <td>{{ vehicles[0].year }}</td>
+          </tr>
+        </tbody>
+      </table>
+     
+      
+      <p>&nbsp;&nbsp;</p>
+      
+      <h2 >User Profile</h2>
+      <p>View and manage Your Personal details.</p>
+      <table>
+        <tbody>
+          <tr>
+            <th>First Name</th>
+            <td>{{ user.firstName }}</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>{{ user.lastName }}</td>
+          </tr>
+          <tr>
+            <th>Date of Birth</th>
+            <td>{{ user.dob }}</td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>{{ user.gender }}</td>
+          </tr>
+          <tr>
+            <th>Street</th>
+            <td>{{ user.street }}</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>{{ user.location }}</td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>{{ user.city }}</td>
+          </tr>
+          <tr>
+            <th>State</th>
+            <td>{{ user.state }}</td>
+          </tr>
+          <tr>
+            <th>Pincode</th>
+            <td>{{ user.pincode }}</td>
+          </tr>
+          <tr>
+            <th>Mobile Number</th>
+            <td>{{ user.mobileNumber }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+          </tr>
+          <tr>
+            <th>Vehicle Number</th>
+            <td>{{ user.vehicleNumber }}</td>
+          </tr>
+          <tr>
+            <th>Registration Number</th>
+            <td>{{ user.registrationNumber }}</td>
+          </tr>
+          <tr>
+            <th>Year of Purchase</th>
+            <td>{{ user.yearOfPurchase }}</td>
+          </tr>
+          <tr>
+            <th>Driver License</th>
+            <td>{{ user.driverLicense }}</td>
+          </tr>
+          <tr>
+            <th>Dealer</th>
+            <td>{{ user.dealer }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
+  </div>
   </div>

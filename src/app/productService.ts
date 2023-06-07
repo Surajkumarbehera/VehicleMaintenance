@@ -31,5 +31,6 @@ export class ProductService{
     getUserDeatils(userId:String):Observable<Object>
     {   
         return this._httpClient.post('http://localhost:9090/myapp/user/data',{params:{'user_id':userId}});
+        //return this._httpClient.post('https://run.mocky.io/v3/677ada57-1641-43fa-83e8-219082959bc0',{headers:this.httpHeaders});
     }
 }

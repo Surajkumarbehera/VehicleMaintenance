@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
                      // sessionStorage.setItem("sessionId",String(obj.authtoken));
                       //sessionStorage.setItem("flag","login");
                       if(obj.result=="success"){
-                        sessionStorage.setItem("user_id",String(obj.user_id));
-                        this.route.navigateByUrl("/HomePage");
+                        sessionStorage.setItem("user_id",(obj.user_id));
+                        this.route.navigateByUrl("/MainPage");
                         this.loginStatus= true;
                       }
                       else if (obj.result=="failed"){
