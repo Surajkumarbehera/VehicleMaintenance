@@ -1,7 +1,11 @@
+.navBar{
+  background-color: #f1f1f1
+}
 .tab {
     display: flex;
     justify-content: left;
     margin-bottom: 20px;
+    ;
   }
   
   .tab-button {
@@ -149,17 +153,20 @@ td.text-right {
   background-color:green;
 }
 
-
 .fixed-top {
+  margin-bottom: 10px;
   position: fixed;
   top: 0px; /* Adjust the value as per your desired padding */
   left: 0;
   width: 100%;
   z-index: 9999;
 }
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
 .padding-for-content{
-  padding-top: 20px; 
+  padding-top: 30px; 
  
 }
 .top-right {
@@ -172,14 +179,15 @@ td.text-right {
 
 .mainText {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .subtext {
-  margin-top: 5px; /* Adjust the value as per your desired spacing */
+  padding: 5px; /* Adjust the value as per your desired spacing */
 }
 .bold-div {
   font-weight: bold;
+  padding: 5px;
 }
 
 
