@@ -128,7 +128,120 @@
   integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
   <title>Intelligent Vehicle Maintenance</title>
+  <script type="text/javascript">
 
+    var i = 0;
+    var txt = "Care your vehicle with IVMS - a new leap in vecicle servicing!";
+    var speed = 60;
+
+    var previous_message;
+    function myFunction() {
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+      if (i < txt.length) {
+        document.getElementById("typing_effect").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(myFunction, speed);
+      }
+    }
+
+    $(".dropdown-menu a").click(function () {
+      $(this).parents(".dropdown").find('.display_btn').html($(this).text());
+      $(this).parents(".dropdown").find('.display_btn').val($(this).data('value'));
+    });
+
+    function seekAudioClick(startTime) {
+      var element = document.getElementById('music');
+      element.play();
+      element.currentTime = parseFloat(startTime);
+    }
+
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player_youtube', {
+        videoId: '{{file_information.youtubeId}}'
+      });
+    }
+
+    function debounce(func, wait = 100) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          func.apply(this, args);
+        }, wait);
+      };
+    }
+
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip({ html: true });
+    });
+
+
+    $(function () {
+      $('.show_player').click(function () {
+        $('.player_window').show();
+      });
+
+
+      $('.hide_player').click(function () {
+        $('.player_window').hide();
+      });
+
+      $('.seekVideo').click(function () {
+        $('.' + previous_message).css({ "border": "0px", "border-radius": "0px" })
+        var startTime = parseFloat($(this).data('timestamp'))
+        var current_message = $(this).attr('id')
+        current_message = 'wrapper-' + current_message
+        previous_message = current_message
+        $('.' + current_message).css({ "border": "2px solid #95a5a6", "border-radius": "25px" })
+        player.seekTo(startTime)
+        player.playVideo()
+      })
+
+      $('.seekAudio').click(function () {
+        $('.' + previous_message).css({ "border": "0px", "border-radius": "0px" })
+
+        var current_message = $(this).attr('id')
+        current_message = 'wrapper-' + current_message
+        previous_message = current_message
+        $('.' + current_message).css({ "border": "2px solid #95a5a6", "border-radius": "25px" })
+
+      })
+
+      $('#search').keyup(debounce(function (e) {
+        var search = $(this).val().toLowerCase().trim()
+
+        $('#transcript .message').each(function () {
+          if ($(this).text().toLowerCase().indexOf(search) != -1) {
+            $(this).parent().show()
+          } else {
+            $(this).parent().hide()
+          }
+        })
+      }, 250));
+
+      var dataArray = new Array();
+      dataArray[0] = "{% static 'images/profile2.png' %}";
+      dataArray[1] = "{% static 'images/profile3.png' %}";
+      dataArray[2] = "{% static 'images/profile1.png' %}";
+      //start with id=0 after 5 seconds
+      var thisId = 0;
+
+      window.setInterval(function () {
+        $('#thisImg').attr('src', dataArray[thisId]);
+        thisId++; //increment data array id
+        if (thisId == 3) thisId = 0; //repeat from start
+      }, 5000);
+    });
+
+
+  </script>
 
   <style>
     body {
@@ -260,7 +373,7 @@
 
 </head>
 
-<body >
+<body onload = myFunction()>
   <!--
   <div id="loader">
     <div class="container" style="text-align:center">
@@ -285,7 +398,7 @@
   <div id="main_content" >
     <!-- navbar -->
     <nav class=" sticky-top navbar navbar-expand-lg navbar-dark bg-dark ">
-      <img src="./images/img (2).jpg" width="35px" style="padding-right:5px;" />
+      <img src="../../../assets/images/logo.jpg" width="35px" style="padding-right:5px;" />
       <a class="navbar-brand" href="/">Intelligent Vehicle Maintenance</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -492,122 +605,6 @@ background-image: -webkit-linear-gradient(40deg, rgb(255,255,255) 75.5%,	rgb(186
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <script type="text/javascript">
-
-    var i = 0;
-    var txt = "Care your vehicle with IVMS - a new leap in vecicle servicing!";
-    var speed = 60;
-
-    var previous_message;
-    function myFunction() {
-      document.getElementById('loader').style.display = 'none';
-      document.getElementById('main_content').style.display = 'block';
-      document.getElementById("year").innerHTML = new Date().getFullYear();
-      if (i < txt.length) {
-        document.getElementById("typing_effect").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(myFunction, speed);
-      }
-    }
-
-    $(".dropdown-menu a").click(function () {
-      $(this).parents(".dropdown").find('.display_btn').html($(this).text());
-      $(this).parents(".dropdown").find('.display_btn').val($(this).data('value'));
-    });
-
-    function seekAudioClick(startTime) {
-      var element = document.getElementById('music');
-      element.play();
-      element.currentTime = parseFloat(startTime);
-    }
-
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player_youtube', {
-        videoId: '{{file_information.youtubeId}}'
-      });
-    }
-
-    function debounce(func, wait = 100) {
-      let timeout;
-      return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-          func.apply(this, args);
-        }, wait);
-      };
-    }
-
-    $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip({ html: true });
-    });
-
-
-    $(function () {
-      $('.show_player').click(function () {
-        $('.player_window').show();
-      });
-
-
-      $('.hide_player').click(function () {
-        $('.player_window').hide();
-      });
-
-      $('.seekVideo').click(function () {
-        $('.' + previous_message).css({ "border": "0px", "border-radius": "0px" })
-        var startTime = parseFloat($(this).data('timestamp'))
-        var current_message = $(this).attr('id')
-        current_message = 'wrapper-' + current_message
-        previous_message = current_message
-        $('.' + current_message).css({ "border": "2px solid #95a5a6", "border-radius": "25px" })
-        player.seekTo(startTime)
-        player.playVideo()
-      })
-
-      $('.seekAudio').click(function () {
-        $('.' + previous_message).css({ "border": "0px", "border-radius": "0px" })
-
-        var current_message = $(this).attr('id')
-        current_message = 'wrapper-' + current_message
-        previous_message = current_message
-        $('.' + current_message).css({ "border": "2px solid #95a5a6", "border-radius": "25px" })
-
-      })
-
-      $('#search').keyup(debounce(function (e) {
-        var search = $(this).val().toLowerCase().trim()
-
-        $('#transcript .message').each(function () {
-          if ($(this).text().toLowerCase().indexOf(search) != -1) {
-            $(this).parent().show()
-          } else {
-            $(this).parent().hide()
-          }
-        })
-      }, 250));
-
-      var dataArray = new Array();
-      dataArray[0] = "{% static 'images/profile2.png' %}";
-      dataArray[1] = "{% static 'images/profile3.png' %}";
-      dataArray[2] = "{% static 'images/profile1.png' %}";
-      //start with id=0 after 5 seconds
-      var thisId = 0;
-
-      window.setInterval(function () {
-        $('#thisImg').attr('src', dataArray[thisId]);
-        thisId++; //increment data array id
-        if (thisId == 3) thisId = 0; //repeat from start
-      }, 5000);
-    });
-
-
-  </script>
 
 </body>
 
