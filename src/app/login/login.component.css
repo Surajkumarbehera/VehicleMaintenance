@@ -1,37 +1,39 @@
 .background
 {
-	background:url("/assets/images/pizzajust-pizzajust-awesome.-wallpaper_.jpg");
-	height: 110vh;
+	background:url("/assets/images/bgLogin.jpg");
 	background-size: cover;
 	background-position: center;
 }
 #log{
 	border: 2px solid white;
-	padding: 60px 40px;
-	margin-top: 80px;
-	background-color: black;
-
+	padding: 20px;
+	margin-top: 10px;
 }
 img{
-	width: 90px;
-	height: 80px;
+	width: 200px;
+	height: 200px;
 }
 h1{
-	color: white;
+	color: black;
 	text-align: center;
 	font-weight: bolder;
 	margin-top: -20px;
 }
 label{
 	font-size:20px;
-	color: white;
+	color: black;
 }
 .row
 {
-	padding-top: 50px;
+	padding-top: 5px;
 }
 #para
 {
-	color: white;
+	color: black;
 
+}
+.alert
+{
+	margin: 10px;
+	padding: 2px;
 }
